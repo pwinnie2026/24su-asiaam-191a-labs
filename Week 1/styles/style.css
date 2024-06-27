@@ -44,6 +44,7 @@ main {
 
 .portfolio {
     grid-area: portfolio; 
+    background-color: red;
 }
 
 #map { 
