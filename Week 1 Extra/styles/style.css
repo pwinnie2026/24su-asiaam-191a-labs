@@ -48,10 +48,6 @@ main {
     height: 80vh;
 }
 
-footer { 
-    grid-area: footer;
-}
-
 img {
     max-width: 300px;
 }
@@ -61,4 +57,28 @@ img {
     color: #212529;
     font-size: 16px;
     padding: 10px;
+}
+
+#footer {
+    grid-area: footer;
+}
+
+ol {
+    padding-left: 30px;
+}
+
+.portfolio {
+    grid-area: portfolio;
+    display: flex; /* This will make the items inside the portfolio flex items */
+    flex-direction: column; /* This can be row if you want the items to be side by side */
+    justify-content: center; /* This can be flex-start, flex-end, space-between, space-around, space-evenly */
+    align-items: center; /* This can be flex-start, flex-end, stretch, baseline */
+}
+
+#footer {
+    grid-area: footer;
+    padding: 1rem;
+    background-color: #4677a0; /* Sets a darker background for contrast */
+    color: #fff; /* Ensures text is readable against the dark background */
+    text-align: center; /* Centers the footer content */
 }
