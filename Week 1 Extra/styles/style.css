@@ -51,3 +51,7 @@ main {
 footer { 
     grid-area: footer;
 }
+
+img {
+    max-width: 300px;
+}
