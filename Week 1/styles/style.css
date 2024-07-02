@@ -1,6 +1,7 @@
 /* The * selects everything and acts as a global reset to ensure consistency across browsers */
 * {
-    font-family: Arial, sans-serif;
+    font-family: "Dosis", sans-serif;
+    font-weight: 500;
     margin: 0;
     padding: 0; 
     box-sizing: border-box; 
@@ -8,7 +9,7 @@
 
 /* Sets the overall background and ensures the content fits the screen height */
 html{
-    background-color: aliceblue; 
+    background-color: rgb(212, 227, 205); 
 }
 
 html, body {
@@ -36,6 +37,10 @@ main {
 /* Assigns each major section to a part of the grid */
 header { 
     grid-area: header; 
+    padding-bottom: 30px;
+    font-size: 40px;
+    font-weight: 800;
+    color: rgb(74, 15, 96);
 }
 
 main { 
@@ -44,15 +49,57 @@ main {
 
 .portfolio {
     grid-area: portfolio; 
-    background-color: sienna;
+    background-color: rgb(244, 230, 250);
     padding: 30px;
+    border: solid 5px rgb(189, 104, 238);
+    border-radius: 30px;
+}
+
+ul {
+    padding-left: 30px;
+}
+
+h1 {
+    font-size: 40px;
+    font-weight: 800;
+    color: rgb(74, 15, 96);
+    padding-bottom: 5px;
+}
+
+h2 {
+    font-weight: 600;
+    color: rgb(44, 90, 11);
+    padding-top: 30px;
+    padding-bottom: 5px;
+}
+
+h3 {
+    font-size: 20px;
+    font-weight: 800;
+    color: rgb(53, 96, 22);
+}
+
+.subbullet {
+    padding-left: 30px;
+}
+
+img {
+    height: auto;
+    width: 400px;
 }
 
 #map { 
     grid-area: map; 
     height: 80vh; 
+    margin-left: 30px;
+    border: solid 5px rgb(189, 104, 238);
+    border-radius: 30px;
 }
 
 #footer { 
+    font-size: 20px;
+    font-weight: 600;
+    color: rgb(74, 15, 96);
+    padding-top: 30px;
     grid-area: footer; 
 }
