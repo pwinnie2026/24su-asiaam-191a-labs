@@ -8,7 +8,7 @@
 
 /* Sets the overall background and ensures the content fits the screen height */
 html{
-    background-color: aqua; 
+    background-color: aliceblue; 
 }
 
 html, body {
@@ -44,7 +44,7 @@ main {
 
 .portfolio {
     grid-area: portfolio; 
-    background-color: red;
+    background-color: sienna;
 }
 
 #map { 
@@ -52,6 +52,6 @@ main {
     height: 80vh; 
 }
 
-footer { 
+#footer { 
     grid-area: footer; 
 }
