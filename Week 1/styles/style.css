@@ -45,6 +45,7 @@ main {
 .portfolio {
     grid-area: portfolio; 
     background-color: sienna;
+    padding: 30px;
 }
 
 #map { 
