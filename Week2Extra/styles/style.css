@@ -1,14 +1,15 @@
 /* Global reset to ensure consistency across browsers */
 * {
-    font-family: Arial, sans-serif; /* Sets a default font for the whole page */
-    margin: 0; /* Removes default margins */
-    padding: 0; /* Removes default padding */
-    box-sizing: border-box; /* Makes sure borders and paddings are included in the element's total width and height */
+    font-family: "Dosis", sans-serif;
+    font-weight: 500;
+    margin: 0;
+    padding: 0; 
+    box-sizing: border-box; 
 }
 
 /* Sets the background color of the whole page and ensures content fits the screen height */
-html {
-    background-color: aqua; /* Sets a light blue background color */
+html{
+    background-color: rgb(212, 227, 205); 
 }
 
 /* Applies to both <html> and <body> */
@@ -39,6 +40,10 @@ main {
 /* Grid area assignments for each major section, linking them to their respective areas in the grid */
 header { 
     grid-area: header; /* Assigns the header to its grid area */
+    padding-bottom: 30px;
+    font-size: 40px;
+    font-weight: 800;
+    color: rgb(74, 15, 96);
 }
 
 main { 
@@ -51,20 +56,48 @@ main {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(244, 230, 250);
+    padding: 30px;
+    border: solid 5px rgb(189, 104, 238);
+    border-radius: 30px;
 }
 
+ul {
+    padding-left: 30px;
+}
+
+h2 {
+    font-weight: 600;
+    color: rgb(44, 90, 11);
+    padding-bottom: 5px;
+}
+
+button {
+    font-weight: 600;
+    font-size: 20px;
+    cursor: grab;
+    color: rgb(87, 154, 39);
+    padding: 5px;
+    border: solid 3px rgb(202, 155, 221);
+    border-radius: 5px;
+}
 
 #map { 
     grid-area: map; /* Assigns the map section to its grid area */
     height: 80vh; /* Sets the map's height to 80% of the viewport height */
+    margin-left: 30px;
+    border: solid 5px rgb(189, 104, 238);
+    border-radius: 30px;
 }
 
 #footer {
     grid-area: footer;
     padding: 5px; /* Adds padding for better spacing */
-    background-color: #4677a0; /* Sets a dark background for contrast */
+    margin-top: 30px;
+    background-color: rgb(145, 75, 186); /* Sets a dark background for contrast */
     color: #fff; /* Ensures text is readable against the dark background */
     text-align: center; /* Centers the footer content */
+    border-radius: 30px;
 }
 
 #contents{
