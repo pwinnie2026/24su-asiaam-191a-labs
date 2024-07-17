@@ -1,45 +1,68 @@
 /* Global reset to ensure consistency across browsers */
 * {
-    font-family: Arial, sans-serif; /* Sets a default font for the whole page */
-    margin: 0; /* Removes default margins */
-    padding: 0; /* Removes default padding */
-    box-sizing: border-box; /* Makes sure borders and paddings are included in the element's total width and height */
+    font-family: Arial, sans-serif;
+    /* Sets a default font for the whole page */
+    margin: 0;
+    /* Removes default margins */
+    padding: 0;
+    /* Removes default padding */
+    box-sizing: border-box;
+    /* Makes sure borders and paddings are included in the element's total width and height */
 }
 
 /* Sets the background color of the whole page and ensures content fits the screen height */
 html {
-    background-color: aqua; /* Sets a light blue background color */
+    background-color: rgb(212, 227, 205);
 }
 
 /* Applies to both <html> and <body> */
-html, body {
-    height: 80vh; /* Sets the height to 80% of the viewport height, making sure the content fits on the screen */
-    padding: 1rem; /* Adds a bit of space around the content for better readability */
-    box-sizing: border-box; /* Ensures padding does not add to the set height */
+html,
+body {
+    height: 80vh;
+    /* Sets the height to 80% of the viewport height, making sure the content fits on the screen */
+    padding: 1rem;
+    /* Adds a bit of space around the content for better readability */
+    box-sizing: border-box;
+    /* Ensures padding does not add to the set height */
 }
 
 /* Defines the main layout of the page using CSS Grid */
 body {
-    display: grid; /* Enables CSS Grid layout */
-    grid-template-areas: 
-        "header" /* Top area for the header */
-        "main"   /* Middle area for the main content */
-        "footer"; /* Bottom area for the footer */
-    grid-template-rows: auto 1fr auto; /* Sizes: auto for header and footer to fit content, 1fr for main to fill remaining space */
+    display: grid;
+    /* Enables CSS Grid layout */
+    grid-template-areas:
+        "header"
+        /* Top area for the header */
+        "main"
+        /* Middle area for the main content */
+        "footer";
+    /* Bottom area for the footer */
+    grid-template-rows: auto 1fr auto;
+    /* Sizes: auto for header and footer to fit content, 1fr for main to fill remaining space */
 }
 
 /* Sets up the layout for the main content area, dividing it into two columns */
 main {
-    display: grid; /* Enables CSS Grid within the main element */
+    display: grid;
+    /* Enables CSS Grid within the main element */
     grid-template-areas:
-        "portfolio map"; /* Divides the main area into portfolio and map sections side by side */
-    grid-template-columns: 1fr 1fr; /* Allocates equal width to both sections */
-    grid-area: main; /* Assigns the main area to its grid area */
+        "portfolio map";
+    /* Divides the main area into portfolio and map sections side by side */
+    grid-template-columns: 1fr 1fr;
+    /* Allocates equal width to both sections */
+    grid-area: main;
+    /* Assigns the main area to its grid area */
 }
 
 /* Grid area assignments for each major section, linking them to their respective areas in the grid */
-header { 
-    grid-area: header; /* Assigns the header to its grid area */
+header {
+    grid-area: header;
+    /* Assigns the header to its grid area */
+    padding-bottom: 30px;
+    padding-left: 30px;
+    font-size: 40px;
+    font-weight: 800;
+    color: rgb(24, 96, 15);
 }
 
 .portfolio {
@@ -48,24 +71,179 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: rgb(250, 238, 230);
+    padding: 30px;
+    border: solid 5px #b3855d;
+    border-radius: 30px;
 }
 
-#map { 
-    grid-area: map; /* Assigns the map section to its grid area */
-    height: 80vh; /* Sets the map's height to 80% of the viewport height */
+h2 {
+    font-weight: 600;
+    color: rgb(44, 90, 11);
+    padding-bottom: 5px;
+}
+
+button {
+    font-weight: 600;
+    font-size: 20px;
+    cursor: grab;
+    color: rgb(87, 154, 39);
+    padding: 5px;
+    border: solid 3px #b3855d;
+    border-radius: 5px;
+}
+
+#map {
+    grid-area: map;
+    /* Assigns the map section to its grid area */
+    height: 80vh;
+    /* Sets the map's height to 80% of the viewport height */
+    margin-left: 30px;
+    border: solid 5px #b3855d;
+    border-radius: 30px;
 }
 
 #footer {
     grid-area: footer;
-    padding: 5px; /* Adds padding for better spacing */
-    background-color: #4677a0; /* Sets a dark background for contrast */
-    color: #fff; /* Ensures text is readable against the dark background */
-    text-align: center; /* Centers the footer content */
+    padding: 5px;
+    /* Adds padding for better spacing */
+    margin-top: 30px;
+    background-color: #b3855d;
+    /* Sets a dark background for contrast */
+    color: #fff;
+    /* Ensures text is readable against the dark background */
+    text-align: center;
+    /* Centers the footer content */
+    border-radius: 30px;
 }
 
-#contents{
+#contents {
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+}
+
+nav {
+    position: fixed;
+    z-index: 10;
+    left: 0;
+    right: 0;
+    top: 0;
+    padding: 0 5%;
+    height: 50px;
+    /* Background/Border of Nav Bar */
+    background-color: #b3855d;
+    border-bottom: 3px solid rgb(24, 96, 15);
+}
+
+nav .logo {
+    float: left;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    /* Nav Bar logo text */
+    font-size: 30px;
+    color: #FFFFE3;
+}
+
+nav .links {
+    float: right;
+    padding: 0;
+    margin: 0;
+    width: 60%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+/* Makes it so the links on the navigation bar aren't listed */
+nav .links li {
+    list-style: none;
+}
+
+nav .links a {
+    display: block;
+    padding: 1em;
+    font-size: 18px;
+    /* Nav Bar Jumplink Text */
+    color: #FFFFE3;
+    text-decoration: none;
+}
+
+#nav-toggle {
+    position: absolute;
+    top: -100px;
+}
+
+/*The three lines that make the drop down styled navigation menu*/
+nav .icon-burger {
+    display: none;
+    position: absolute;
+    right: 5%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+nav .icon-burger .line {
+    width: 30px;
+    height: 5px;
+    background-color: #fff;
+    margin: 5px;
+    border-radius: 3px;
+    transition: all .3s ease-in-out;
+}
+
+/*To make it media responsive; only appears when the screen size is small*/
+@media screen and (max-width: 768px) {
+    nav .logo {
+        float: none;
+        width: auto;
+        justify-content: center;
+    }
+
+    nav .links {
+        float: none;
+        position: fixed;
+        z-index: 9;
+        left: 0;
+        right: 0;
+        top: 52px;
+        bottom: 100%;
+        width: auto;
+        height: auto;
+        flex-direction: column;
+        justify-content: space-evenly;
+        background-color: rgba(0, 0, 0, .8);
+        overflow: hidden;
+        box-sizing: border-box;
+        transition: all .5s ease-in-out;
+    }
+
+    nav .links a {
+        font-size: 20px;
+    }
+
+    nav :checked~.links {
+        bottom: 0;
+    }
+
+    nav .icon-burger {
+        display: block;
+    }
+
+    /*To make the animation for the icon burger*/
+    nav :checked~.icon-burger .line:nth-child(1) {
+        transform: translateY(10px) rotate(225deg);
+    }
+
+    nav :checked~.icon-burger .line:nth-child(3) {
+        transform: translateY(-10px) rotate(-225deg);
+    }
+
+    nav :checked~.icon-burger .line:nth-child(2) {
+        opacity: 0;
+    }
 }

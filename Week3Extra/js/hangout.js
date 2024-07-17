@@ -60,7 +60,7 @@ function createButtons(lat, lng, title) {
 
 // When the map is fully loaded, start adding GeoJSON data
 map.on('load', function () {
-    fetch("js/map.geojson")
+    fetch("map.geojson")
         .then(response => response.json())
         .then(data => {
             processData(data); // Call processData with the fetched data

@@ -1,0 +1,53 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "sculpture garden",
+                "message": "so relaxing! second contender might be the botanical garden (if it wasn't so far...)",
+                "img": "sculptureGarden"
+            },
+            "geometry": {
+                "coordinates": [
+                    -118.44014491034545,
+                    34.07493923289395
+                ],
+                "type": "Point"
+            },
+            "id": 0
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "music library",
+                "message": "i really like the windows in the music library, and i find the environment good for casual work!",
+                "img": "musicLibrary"
+            },
+            "geometry": {
+                "coordinates": [
+                    -118.44040390277928,
+                    34.07098890286498
+                ],
+                "type": "Point"
+            },
+            "id": 1
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "cpo office",
+                "message": "this is where i work! you can find me here almost daily",
+                "img": "cpoOffice"
+            },
+            "geometry": {
+                "coordinates": [
+                    -118.44426245289834,
+                    34.07167138972325
+                ],
+                "type": "Point"
+            },
+            "id": 2
+        }
+    ]
+}
