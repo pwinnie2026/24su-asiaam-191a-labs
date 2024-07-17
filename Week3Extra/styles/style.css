@@ -124,6 +124,11 @@ button {
     gap: 10px;
 }
 
+.logo {
+    height: 30px;
+    object-fit: cover;
+}
+
 nav {
     position: fixed;
     z-index: 10;

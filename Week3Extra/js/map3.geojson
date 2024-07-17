@@ -1,0 +1,64 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "seaside donuts",
+                "message": "i get a green thai tea and a jalepeno ham croissant",
+                "img": "seaside"
+            },
+            "geometry": {
+                "coordinates": [
+                    -117.9290062754213,
+                    33.60866555672408
+                ],
+                "type": "Point"
+            }
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "the getty",
+                "message": "sometimes fun to visit their exhibits!",
+                "img": "getty"
+            },
+            "geometry": {
+                "coordinates": [
+                    -118.47478653537016,
+                    34.07780445263485
+                ],
+                "type": "Point"
+            },
+            "id": 1
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "westfield century city",
+                "message": "mall! mall! mall!",
+                "img": "westfield"
+            },
+            "geometry": {
+                "coordinates": [
+                    -118.41952269503676,
+                    34.05864188995997
+                ],
+                "type": "Point"
+            },
+            "id": 2
+        },
+        {
+            "type": "Feature",
+            "properties": {},
+            "geometry": {
+                "coordinates": [
+                    -118.13841796592853,
+                    33.903483964316834
+                ],
+                "type": "Point"
+            },
+            "id": 3
+        }
+    ]
+}

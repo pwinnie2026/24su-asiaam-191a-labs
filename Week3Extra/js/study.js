@@ -1,5 +1,5 @@
 // declare variables
-let mapOptions = { 'centerLngLat': [-118.4420, 34.0734], 'startingZoomLevel': 15 }
+let mapOptions = { 'centerLngLat': [-118.3721, 34.0510], 'startingZoomLevel': 10 }
 
 const map = new maplibregl.Map({
     container: 'map', // container ID
@@ -60,7 +60,7 @@ function createButtons(lat, lng, title) {
 
 // When the map is fully loaded, start adding GeoJSON data
 map.on('load', function () {
-    fetch("map.geojson")
+    fetch("js/map2.geojson")
         .then(response => response.json())
         .then(data => {
             processData(data); // Call processData with the fetched data

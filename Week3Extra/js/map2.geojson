@@ -1,0 +1,52 @@
+{
+    "type": "FeatureCollection",
+    "features": [
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "bonsai",
+                "message": "get their hojicha einspanner!",
+                "img": "bonsai"
+            },
+            "geometry": {
+                "coordinates": [
+                    -118.4538159654789,
+                    34.044987398970406
+                ],
+                "type": "Point"
+            },
+            "id": 3
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "series a",
+                "message": "their corn latte!!",
+                "img": "seriesA"
+            },
+            "geometry": {
+                "coordinates": [
+                    -118.37274881492864,
+                    34.06393741674758
+                ],
+                "type": "Point"
+            },
+            "id": 1
+        },
+        {
+            "type": "Feature",
+            "properties": {
+                "title": "memorylook",
+                "message": "i liked their matcha einspanner haha",
+                "img": "memoryLook"
+            },
+            "geometry": {
+                "coordinates": [
+                    -118.29710360158904,
+                    34.05288011853236
+                ],
+                "type": "Point"
+            }
+        }
+    ]
+}
