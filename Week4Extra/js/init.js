@@ -1,9 +1,9 @@
 // declare variables
-let mapOptions = {'centerLngLat': [-118.444,34.0709],'startingZoomLevel':5}
+let mapOptions = {'centerLngLat': [-118.444,34.0709],'startingZoomLevel':8}
 
 const map = new maplibregl.Map({
     container: 'map', // container ID
-    style: 'https://api.maptiler.com/maps/streets-v2-light/style.json?key=wsyYBQjqRwKnNsZrtci1', // Your style URL
+    style: 'https://api.maptiler.com/maps/streets-v2-light/style.json?key=JWrMVIrr3Jz2WGVMeDwh', // Your style URL
     center: mapOptions.centerLngLat, // Starting position [lng, lat]
     zoom: mapOptions.startingZoomLevel // Starting zoom level
 });
@@ -12,18 +12,35 @@ function addMarker(data){
     let popup_message;
     let lng = data['lng'];
     let lat = data['lat'];
-    if (data['Have you been vaccinated, and are you below the age of 21?'] == "Yes"){
-        popup_message = `<h2>Vaccinated</h2> <h3>Location: ${data['Where did you get vaccinated?']}</h3> <p>Zip Code: ${data['Where is your home zip code?']}</p>`
-        createButtons(lat,lng,data['Where did you get vaccinated?']);
+    let img;
+
+    if (data['In the past year, have you used public transportation?'] == "Yes"){
+        popup_message = `<h2>Used Public Transit</h2> <p>Experience: ${data['Share any of your past experiences using public transportation, if any?']}</p> <p>Heat: ${data['Share whether heat impacts your experience using public transportation compared to other modes of transportation?']}</p> <h3>Zip Code: ${data['Where is your home zip code?']}</h3>`
+        createButtons(lat,lng,data['Where is your home zip code?']);
+        img = "bus";
     }
     else{
-        popup_message = `<h2>Not Vaccinated</h2><p>Zip Code: ${data['Where is your home zip code?']}</p>`
+        popup_message = `<h2>Doesn't Use Public Transit</h2> <h3>Zip Code: ${data['Where is your home zip code?']}</h3>`
+        img = "car";
     }
-    new maplibregl.Marker()
+    
+    let marker = new maplibregl.Marker({ element: markerImage(img) })
         .setLngLat([lng, lat])
         .setPopup(new maplibregl.Popup()
             .setHTML(popup_message))
         .addTo(map)
+}
+
+function markerImage(img) {
+    const png = `js/${img}.png`;
+    const marker = document.createElement('div');
+    marker.style.backgroundImage = `url(${png})`;
+    marker.style.backgroundSize = 'cover';
+    marker.style.width = '60px';
+    marker.style.height = '60px';
+    marker.style.borderRadius = '50px';
+
+    return marker;
 }
 
 function createButtons(lat,lng,title){
@@ -40,7 +57,7 @@ function createButtons(lat,lng,title){
     document.getElementById("contents").appendChild(newButton);
 }
 
-const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vTwgfd8g-8w3fs4fDrIugHBSgS7bvzWL7Lopv5t83xyYFCoovvMQdgSSPKlqlPhdyyG2loeH3gZtT_a/pub?output=csv"
+const dataUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRQqP2jMvJds2rtZnoa2lihBlAQB0KPKeVQS_HAuN4xrPKfeLLE7aPiCdZjsyFiCsWC4_4cNXy0an90/pub?output=csv"
 
 // When the map is fully loaded, start adding GeoJSON data
 map.on('load', function() {
@@ -63,7 +80,7 @@ function processData(results){
         // let coordinates = feature.geometry.coordinates;
         let longitude = feature['lng']
         let latitude = feature['lat'];
-        let title = feature['Where did you get vaccinated?'];
+        let title = feature['In the past year, have you used public transportation?'];
         let message = feature['Where is your home zip code?'];
         addMarker(feature);
     });

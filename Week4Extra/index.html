@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Hello World with MapLibreGl</title>
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" href="#">
+        <link rel="stylesheet" href="styles/style.css">
+
+        <!-- MapLibreGL's css-->
+        <link rel="stylesheet" href="https://unpkg.com/maplibre-gl/dist/maplibre-gl.css" />
+
+        <!-- MapLibreGL's JavaScript-->
+        <script src="https://unpkg.com/maplibre-gl/dist/maplibre-gl.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    </head>
+
+    <body>
+        <header>
+            Heat and Public Transportation
+            <h6>Public transport includes the bus, rail/train, bikes, or subway.</h6>
+        </header>
+
+        <main>
+            <div class="portfolio">
+                <div id="contents"></div>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfEacU98MWes4pwbgzVXN9w4jG9xwmhRql9coHsm1PayYi6VQ/viewform?embedded=true" width=100% height=100% frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+            </div>
+            <div id="map"></div>
+            <h2 id="j">Legend</h2>
+            <div id="legend">
+                <div class="iconDiv">
+                    <img class="icon" src="js/bus.png">
+                    <p>Respondent takes some form of public transit.</p>
+                </div>
+                <div class="iconDiv">
+                    <img class="icon" src="js/car.png">
+                    <p>Respondent does not use some form of public transit.</p>
+                </div>
+            </div>
+        </main>
+        <div id="footer">
+            Copyright(2024)
+        </div>
+        <script src="js/init.js"></script>
+    </body>
+</html>

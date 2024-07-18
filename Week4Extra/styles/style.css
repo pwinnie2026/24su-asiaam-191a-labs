@@ -1,0 +1,148 @@
+/* Global reset to ensure consistency across browsers */
+* {
+    font-family: Arial, sans-serif;
+    /* Sets a default font for the whole page */
+    margin: 0;
+    /* Removes default margins */
+    padding: 0;
+    /* Removes default padding */
+    box-sizing: border-box;
+    /* Makes sure borders and paddings are included in the element's total width and height */
+}
+
+/* Sets the background color of the whole page and ensures content fits the screen height */
+html {
+    background-color: rgb(188, 236, 244);
+}
+
+/* Applies to both <html> and <body> */
+html,
+body {
+    height: 80vh;
+    /* Sets the height to 80% of the viewport height, making sure the content fits on the screen */
+    padding: 1rem;
+    /* Adds a bit of space around the content for better readability */
+    box-sizing: border-box;
+    /* Ensures padding does not add to the set height */
+}
+
+/* Defines the main layout of the page using CSS Grid */
+body {
+    display: grid;
+    /* Enables CSS Grid layout */
+    grid-template-areas:
+        "header"
+        /* Top area for the header */
+        "main"
+        /* Middle area for the main content */
+        "footer";
+    /* Bottom area for the footer */
+    grid-template-rows: auto 1fr auto;
+    /* Sizes: auto for header and footer to fit content, 1fr for main to fill remaining space */
+}
+
+/* Sets up the layout for the main content area, dividing it into two columns */
+main {
+    display: grid;
+    /* Enables CSS Grid within the main element */
+    grid-template-areas:
+        "portfolio map";
+    /* Divides the main area into portfolio and map sections side by side */
+    grid-template-columns: 1fr 1fr;
+    /* Allocates equal width to both sections */
+    grid-area: main;
+    /* Assigns the main area to its grid area */
+}
+
+/* Grid area assignments for each major section, linking them to their respective areas in the grid */
+header {
+    grid-area: header;
+    /* Assigns the header to its grid area */
+    padding-bottom: 30px;
+    padding-left: 30px;
+    font-size: 40px;
+    font-weight: 800;
+    color: rgb(15, 47, 96);
+}
+
+#legend {
+    display: flex;
+    background-color: rgb(250, 238, 230);
+    margin-top: 30px;
+    padding: 30px;
+    border: solid 5px #c1824b;
+    border-radius: 30px;
+}
+
+.iconDiv {
+    display: flex;
+}
+
+.icon {
+    height: 50px;
+    width: auto;
+    object-fit: cover;
+}
+
+#j {
+    font-size: 100px;
+}
+
+.portfolio {
+    grid-area: portfolio;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(250, 238, 230);
+    padding: 30px;
+    border: solid 5px #c1824b;
+    border-radius: 30px;
+}
+
+h2 {
+    font-weight: 600;
+    color: rgb(11, 39, 90);
+    padding-bottom: 5px;
+}
+
+button {
+    font-weight: 600;
+    font-size: 20px;
+    cursor: grab;
+    color: rgb(39, 77, 154);
+    padding: 5px;
+    border: solid 3px #b96042;
+    border-radius: 5px;
+}
+
+#map {
+    grid-area: map;
+    /* Assigns the map section to its grid area */
+    height: 80vh;
+    /* Sets the map's height to 80% of the viewport height */
+    margin-left: 30px;
+    border: solid 5px #c1824b;
+    border-radius: 30px;
+}
+
+#footer {
+    grid-area: footer;
+    padding: 5px;
+    /* Adds padding for better spacing */
+    margin-top: 30px;
+    background-color: #b96042;
+    /* Sets a dark background for contrast */
+    color: #fff;
+    /* Ensures text is readable against the dark background */
+    text-align: center;
+    /* Centers the footer content */
+    border-radius: 30px;
+}
+
+#contents {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
